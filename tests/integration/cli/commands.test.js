@@ -86,7 +86,7 @@ describe('CLI Models Command (Action Handler Test)', () => {
 	// --- Replicate the action handler logic from commands.js ---
 	async function modelsAction(options) {
 		options = options || {}; // Ensure options object exists
-		const availableModels = configManager.getAvailableModels();
+		const availableModels = configManager.getAvailableModels(null); // Pass null for projectRoot in test
 
 		const findProvider = (modelId) => {
 			const modelInfo = availableModels.find((m) => m.id === modelId);
